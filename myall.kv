@@ -1,0 +1,337 @@
+ScreenManager:
+    ChatsScreen:
+    UpdatesScreen:
+    CommunityScreen:
+    	
+<ChatsScreen>:
+    name: "chats"    	
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "WhatsApp"
+                font_style: "H5"
+                theme_text_color: "Custom"
+                text_color: 0, 0.7, 0, 1
+                valign: "middle"
+                
+            MDIconButton:
+                icon: "qrcode-scan"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+
+            MDIconButton:
+                icon: "camera-outline"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1                       
+                
+            MDIconButton:
+                id: dots_button
+                icon: "dots-vertical"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1  
+                on_release: app.open_menu(self)
+                
+        MDLabel:
+        	text: "Chats"
+        	halign: "center"                                    
+    MDTextField:
+        hint_text: "Ask Meta AI or Search"
+        text_mode: "on_focus"
+        icon_left: "magnify"
+        icon_left_color: 0, 0.7, 0, 1
+        pos_hint:{"center_x":0.5, "center_y":0.88}
+        size_hint_x: 0.9
+        width: 600           
+             
+                 
+
+          
+ # buttom chat and icon       
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "  Chats"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "Updates"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+
+            MDLabel:
+                text: "Communitie"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "         Calls"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+ 
+    MDIconButton:
+        icon: "message-reply-text-outline"
+        pos_hint: {"center_x":0.1, "center_y":0.1}
+    MDIconButton:
+        icon: "chat-plus-outline"
+        pos_hint: {"center_x":0.35, "center_y":0.1}
+        on_press:
+        	root.manager.current="updates"
+        	root.manager.transition.direction="left"
+    MDIconButton:
+        icon: "account-group-outline"
+        pos_hint: {"center_x":0.62, "center_y":0.1}
+        on_press:
+        	root.manager.current="community"
+        	root.manager.transition.direction="left"
+    MDIconButton:
+        icon: "phone-outline"
+        pos_hint: {"center_x":0.88, "center_y":0.1}
+
+    MDFloatingActionButton:
+        icon: "message-plus"
+        pos_hint: {"center_x":0.85, "center_y":0.25}
+        md_bg_color: 0,0.7,0,1
+        elevation: 0
+        
+    
+<UpdatesScreen>:
+	name: "updates"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "Updates"
+                font_style: "H5"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDIconButton:
+                icon: "qrcode-scan"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+
+            MDIconButton:
+                icon: "magnify"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1                       
+                
+            MDIconButton:
+                id: dots_button
+                icon: "dots-vertical"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1  
+                on_release: app.open_menu(self)                                              
+
+        MDLabel:
+            text: "Status"
+            halign: "center"                                                         
+
+          
+ # buttom chat and icon       
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "  Chats"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "Updates"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+
+            MDLabel:
+                text: "Communitie"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "         Calls"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+ 
+    MDIconButton:
+        icon: "message-reply-text-outline"
+        pos_hint: {"center_x":0.1, "center_y":0.1}
+        on_press:
+        	root.manager.current="chats"
+        	root.manager.transition.direction="right"
+    MDIconButton:
+        icon: "chat-plus-outline"
+        pos_hint: {"center_x":0.35, "center_y":0.1}
+    MDIconButton:
+        icon: "account-group-outline"
+        pos_hint: {"center_x":0.62, "center_y":0.1}
+        on_press:
+        	root.manager.current="community"
+        	root.manager.transition.direction="left"            
+    MDIconButton:
+        icon: "phone-outline"
+        pos_hint: {"center_x":0.88, "center_y":0.1}
+
+    MDFloatingActionButton:
+        icon: "camera-plus-outline"
+        pos_hint: {"center_x":0.85, "center_y":0.25}
+        md_bg_color: 0,0.7,0,1
+        elevation: 0
+    
+<CommunityScreen>:
+    name: "community"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "Community"
+                font_style: "H5"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDIconButton:
+                icon: "qrcode-scan"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+           
+            MDIconButton:
+                id: dots_button
+                icon: "dots-vertical"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1  
+                on_release: app.open_menu(self) 
+                  
+
+        ScrollView:
+            MDList:
+                OneLineIconListItem:
+                    text: "Community"
+                    IconLeftWidget:
+                        icon: "account-group-outline"
+
+                OneLineIconListItem:
+                    text: "Group B"
+                    IconLeftWidget:
+                        icon: "account-group"
+
+                OneLineIconListItem:
+                    text: "Group C"
+                    IconLeftWidget:
+                        icon: "account"
+        	
+       
+#        OneLineIconListItem:
+#            text: "Status"
+#            IconLeftWidget:
+#            	icon: "account-group-outline"                                                   
+
+          
+ # buttom chat and icon       
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(5)
+        BoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            padding: dp(4)
+            spacing: dp(5)   
+
+            MDLabel:
+                text: "  Chats"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "Updates"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+
+            MDLabel:
+                text: "Communitie"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+            MDLabel:
+                text: "         Calls"
+                font_style: "Subtitle2"
+                theme_text_color: "Custom"
+                text_color: 0, 0, 0, 1
+                valign: "middle"
+                
+ 
+    MDIconButton:
+        icon: "message-reply-text-outline"
+        pos_hint: {"center_x":0.1, "center_y":0.1}
+        on_press:
+        	root.manager.current="chats"
+        	root.manager.transition.direction="right"
+    MDIconButton:
+        icon: "chat-plus-outline"
+        pos_hint: {"center_x":0.35, "center_y":0.1}
+        on_press:
+            root.manager.current="updates"
+            root.manager.transition.direction="right"      
+    MDIconButton:
+        icon: "account-group-outline"
+        pos_hint: {"center_x":0.62, "center_y":0.1}
+    MDIconButton:
+        icon: "phone-outline"
+        pos_hint: {"center_x":0.88, "center_y":0.1}
+        
+   	
